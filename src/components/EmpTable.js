@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+ 
+import EmpList from '../components/EmpList'
 
-function EmployeeList(props) {
+function EmployeeList() {
+ 
+
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">Picture</th>
@@ -13,13 +17,8 @@ function EmployeeList(props) {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>img</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>01/22/1989</td>
-        </tr>
+  <EmpList></EmpList>
+   
       </tbody>
     </table>
   );
