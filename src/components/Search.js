@@ -1,8 +1,13 @@
-import React from "react";
+import React,{ useContext} from "react";
+import EmpContext from '../utils/EmpContext'
 
 function Search(props) {
+
+const {emp} = useContext(EmpContext)
+
+    
   return (
-    <div className="container main text-center">
+    <div className="container main text-center bg-light py-3">
       <form>
      
         <input
@@ -13,6 +18,7 @@ function Search(props) {
           className="form-control col-md-3 mx-auto text-center"
           placeholder="Search for an employee"
           id="search"
+
         />
         <button
           onClick={props.handleFormSubmit}
