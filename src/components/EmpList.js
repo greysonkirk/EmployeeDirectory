@@ -1,20 +1,19 @@
-import React, { useContext } from "react";
-import EmpContext from "../utils/EmpContext";
+import React  from "react";
+ 
 
 function EmployeeList() {
-  const {employees} = useContext(EmpContext);
  
-   console.log(employees)
+
   return (
- 
-          
-            <tr>
-              <td>asdgsgf</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>01/22/1989</td>
-            </tr>
+    <>
+      {employees.map(employee =>      <tr>
+      <td><img className="img-thumbnail"src={employee.picture.thumbnail} alt="person" key={employee.login.uuid}></img></td>
+      <td>{employee.name.first +" "+ employee.name.last} </td>
+      <td>{employee.phone}</td>
+      <td>{employee.email}</td>
+      <td>{employee.dob.date}</td>
+    </tr>)}
+    </>
  
   );
 }

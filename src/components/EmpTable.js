@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
- 
-import EmpList from '../components/EmpList'
+import React from "react";
+
+import EmpList from "../components/EmpList";
 
 function EmployeeList() {
- 
-
   return (
     <table className="table">
       <thead>
@@ -17,8 +15,7 @@ function EmployeeList() {
         </tr>
       </thead>
       <tbody>
-  <EmpList></EmpList>
-   
+        <EmpList></EmpList>
       </tbody>
     </table>
   );

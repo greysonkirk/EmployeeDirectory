@@ -1,17 +1,16 @@
-import React,{ useContext} from "react";
-import EmpContext from '../utils/EmpContext'
+import React from "react";
+ 
 
 function Search(props) {
 
-const {emp} = useContext(EmpContext)
-
+ 
     
   return (
     <div className="container main text-center bg-light py-3">
       <form>
      
         <input
-          onChange={props.handleInputChange}
+          onChange={event => props.handleInputChange(event)}
           value={props.search}
           name="search"
           type="text"
