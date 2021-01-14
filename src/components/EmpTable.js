@@ -1,8 +1,10 @@
 import React from "react";
+ 
+ 
 
-import EmpList from "../components/EmpList";
-
-function EmployeeList() {
+function EmpTable(props) {
+ 
+ 
   return (
     <table className="table">
       <thead>
@@ -15,10 +17,31 @@ function EmployeeList() {
         </tr>
       </thead>
       <tbody>
-        <EmpList></EmpList>
+
+        {props.filteredEmp.map(employee =>  
+         
+         <tr  key={employee.login.uuid}>
+         <td>
+           <img
+             className="img-thumbnail"
+             src={employee.picture.thumbnail}
+             alt="person"
+            
+           ></img>
+         </td>
+         <td>{employee.name.first + " " + employee.name.last} </td>
+         <td>{employee.phone}</td>
+         <td>{employee.email}</td>
+         <td>{employee.dob.date}</td>
+       </tr>
+        
+      
+      )} 
+
+   
       </tbody>
     </table>
   );
 }
 
-export default EmployeeList;
+export default EmpTable;

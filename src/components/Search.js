@@ -7,11 +7,13 @@ function Search(props) {
     
   return (
     <div className="container main text-center bg-light py-3">
-      <form>
+      <form
+      onSubmit={props.handleSearchChange}
+      >
      
         <input
-          onChange={event => props.handleInputChange(event)}
-          value={props.search}
+          onChange={props.handleInputChange}
+          value={props.Search}
           name="search"
           type="text"
           className="form-control col-md-3 mx-auto text-center"
@@ -20,7 +22,8 @@ function Search(props) {
 
         />
         <button
-          onClick={props.handleFormSubmit}
+         type="submit"
+         
           className="btn btn-primary mt-3"
         >
           Search

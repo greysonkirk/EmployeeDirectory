@@ -1,21 +1,27 @@
-import React  from "react";
- 
+import React from "react";
 
-function EmployeeList() {
+function EmpList({ picture, login, name, email, dob, phone }) {
+  console.log("employees");
  
 
   return (
     <>
-      {employees.map(employee =>      <tr>
-      <td><img className="img-thumbnail"src={employee.picture.thumbnail} alt="person" key={employee.login.uuid}></img></td>
-      <td>{employee.name.first +" "+ employee.name.last} </td>
-      <td>{employee.phone}</td>
-      <td>{employee.email}</td>
-      <td>{employee.dob.date}</td>
-    </tr>)}
+      <tr>
+        <td>
+          <img
+            className="img-thumbnail"
+            src={picture.thumbnail}
+            alt="person"
+            key={login.uuid}
+          ></img>
+        </td>
+        <td>{name.first + " " + name.last} </td>
+        <td>{phone}</td>
+        <td>{email}</td>
+        <td>{dob.date}</td>
+      </tr>
     </>
- 
   );
 }
 
-export default EmployeeList;
+export default EmpList;
