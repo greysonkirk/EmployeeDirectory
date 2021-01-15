@@ -28,6 +28,13 @@ function Search(props) {
         >
           Search
         </button>
+        <button
+         type="sort"
+         onClick={props.sortName}
+          className="btn btn-success mt-3 mx-3"
+        >
+          Sort
+        </button>
       </form>
     </div>
   );

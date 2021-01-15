@@ -10,6 +10,7 @@ import "./App.css";
 function App() {
   const [employees, setEmployees] = useState([]);
   const [search, setSearch] = useState("");
+  const [sort, setSort] = useState("");
   const [filteredEmp, setFilterEmp] = useState([]);
 
   useEffect(() => {
@@ -45,12 +46,22 @@ function App() {
   };
 
   const sortName = (e) => {
-    const myData = filteredEmp
-    myData.sort();
- return (
-     setFilterEmp(myData)
-     )
-  }
+    e.preventDefault();
+    if (filteredEmp.length > 0) {
+      console.log("gotCalled");
+      if (sort === "ascend") {
+        setFilterEmp(filteredEmp.sort(function(a, b) {
+          var textA = a.name.first.toUpperCase();
+          var textB = b.name.first.toUpperCase();
+          return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+      }))
+        setSort("descend");
+      } else {
+        setFilterEmp(filteredEmp.reverse());
+        setSort("ascend");
+      }
+    }
+  };
 
   return (
     <div>
@@ -59,12 +70,10 @@ function App() {
         handleSearchChange={handleSearchChange}
         handleInputChange={handleInputChange}
         results={search}
+        sortName={sortName}
       />
 
-      <EmpContainer 
-      filteredEmp={filteredEmp}
-      sortName={sortName}
-      ></EmpContainer>
+      <EmpContainer filteredEmp={filteredEmp}></EmpContainer>
     </div>
   );
 }
