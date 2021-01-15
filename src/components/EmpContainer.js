@@ -3,14 +3,17 @@ import EmpTable from "./EmpTable";
 
  
 
-function EmpContainer({filteredEmp}) {
+function EmpContainer({filteredEmp, sortName}) {
 
 
 
   return (
 
     <div className="container main">
-        <EmpTable filteredEmp={filteredEmp}/>
+        <EmpTable 
+        filteredEmp={filteredEmp}
+        sortName={sortName}
+        />
 
     </div>
   );
